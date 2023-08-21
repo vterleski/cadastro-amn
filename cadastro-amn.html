@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sistema de Cadastro de CPF</title>
+</head>
+<body>
+    <h1>Cadastro de CPF</h1>
+    <input type="text" id="cpfInput" placeholder="Digite o CPF">
+    <button onclick="cadastrarCPF()">Cadastrar CPF</button>
+    <div id="resultado"></div>
+
+    <script>
+        // Cria um objeto para armazenar os CPFs cadastrados
+const cpfCadastrados = {};
+
+function cadastrarCpf(cpf) {
+    if (cpfCadastrados[cpf]) {
+        console.log("CPF já utilizado.");
+    } else {
+        cpfCadastrados[cpf] = true;
+        console.log("CPF cadastrado com sucesso!");
+    }
+}
+
+// Exemplos de uso
+cadastrarCpf("123.456.789-10"); // Cadastrando um CPF
+cadastrarCpf("987.654.321-00"); // Cadastrando outro CPF
+cadastrarCpf("123.456.789-10"); // Tentando cadastrar o CPF já existente
+    </script>
+</body>
+</html>
